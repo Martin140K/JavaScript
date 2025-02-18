@@ -1,0 +1,625 @@
+h1{
+    color: black;
+}
+p{
+    color: black;
+}
+html{
+    background-image: url(img/gold.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+hr{
+    background-color: black;
+    color: black;
+    border-color: black;
+    height: 2px;
+}
+.red-circle {
+    height: 100px;
+    width: 100px;
+    border-radius: 100px;
+    margin-right: 25px;
+    margin-left: 380px;
+    box-shadow: 2px 10px;
+    border: 2px solid rgb(140, 140, 140);
+}
+.black-circle{
+    height: 100px;
+    width: 100px;
+    border-radius: 100px;
+    margin-right: 25px;
+    box-shadow: 2px 10px;
+    border: 2px solid rgb(140, 140, 140);
+}
+.green-circle{
+    height: 100px;
+    width: 100px;
+    border-radius: 100px;
+    margin-right: 0px;
+    box-shadow: 2px 10px;
+    border: 2px solid rgb(140, 140, 140);
+}
+.red-circle:hover{
+    box-shadow: none;
+    margin-bottom: -10px;
+}
+.black-circle:hover{
+    box-shadow: none;
+    margin-bottom: -10px;
+}
+.green-circle:hover{
+    box-shadow: none;
+    margin-bottom: -10px;
+}
+img:hover{
+    cursor: pointer;
+}
+.roulette{
+    height: 350px;
+    width: 350px;
+    border-radius: 1000px;
+    margin-left: 10px;
+    position: absolute;
+}
+.roulette-center{
+    height: 350px;
+    width: 350px;
+    border-radius: 1000px;
+    margin-left: 10px;
+    position: absolute;
+}
+.ball{
+    height: 350px;
+    width: 350px;
+    border-radius: 1000px;
+    margin-left: 10px;
+    position: absolute;
+    color: black;
+}
+.roulettespin{
+    transform: rotate(-1440deg);
+    transition: 5.5s;
+    animation: ease-in-out;
+}
+h1, p{
+    text-align: center;
+}
+.bet{
+    color: black;
+    background-color: white;
+    border: 2px solid black;
+    margin-left: 380px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 1px;
+    width: 147px;
+    border-radius: 7px;
+    text-align: center;
+    height: 19px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: rgb(0, 140, 0);
+}
+.bet::placeholder{
+    color:black
+}
+.num{
+    color: black;
+    background-color: white;
+    border: 2px solid black;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 7px;
+    width: 30px;
+    border-radius: 7px;
+    text-align: center;
+    height: 19px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    position: static;
+    background-color: rgb(0, 140, 0);
+}
+.num::placeholder{
+    color: black;
+}
+
+.money{
+    border: 2px solid;
+    margin-left: 380px;
+    margin-right: 10px;
+    font-size: 20px;
+    background-color: rgb(214, 0, 0);
+    margin-bottom: 0px;
+    border-radius: 7px;
+    margin-bottom: 2px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.game-status{
+    text-align: center;
+    border: 2px solid rgb(255, 0, 0);
+    background-color: white;
+    margin-left: 380px ;
+    margin-right: 10px;
+    margin-top: 2px;
+    height: 19px;
+    border-radius: 7px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.container{
+    background-color: purple;
+    width: 750px;
+    height: 360px;
+    margin: auto;
+    border: 5px solid black;
+    border-radius: 50px;
+    padding-right: 10px;
+    padding-top: 10px;
+}
+.reset{
+    border: 2px solid rgb(255, 0, 0);
+    width: 156px;
+    border-radius: 7px;
+    padding-top: 3px;
+    padding-bottom: 1px;
+    height: 32px;
+    color: red;
+    background-color: rgb(0, 0, 0);
+    margin-left: 64%;
+}
+.all-in{
+    border: 2px solid black;
+    position: absolute;
+    width: 156px;
+    border-radius: 7px;
+    padding-top: 3px;
+    padding-bottom: 1px;
+    height: 32px;
+    color: rgb(220, 220, 220);
+    background-color: rgb(0, 0, 0);
+    cursor: pointer;
+    background-color: rgb(0, 0, 141);
+}
+
+.reset:hover{
+    cursor: pointer;
+}
+.description{
+    background-color: goldenrod;
+    margin-left: 35%;
+    margin-right: 35%;
+    padding-bottom: 5px;
+    border: 5px solid black;
+    border-radius: 50px;
+    margin-bottom: 2px;
+    animation-duration: 10s;
+    animation-name: borderColor;
+    animation-iteration-count: infinite;
+}
+.description h1 {
+    margin-top: 5px;
+    margin-bottom: 0px;
+    animation-duration: 10s;
+    animation-name: desc;
+    animation-iteration-count: infinite;
+}
+
+.description hr{
+    animation-name: line;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes desc {
+    0% {
+        color: black;
+    }
+    35% {
+        color: red;
+    }
+    70% {
+        color: green;
+    }
+    100%{
+        color: black;
+    }
+}
+@keyframes borderColor {
+    0% {
+        border: 5px solid black;
+    }
+    35% {
+        border: 5px solid red;
+    }
+    70% {
+        border: 5px solid green;
+    }
+    100%{
+        border: 5px solid black;
+    }
+}
+
+@keyframes line{
+    0% {
+        border: 1px solid black;
+        background-color: black;
+    }
+    35% {
+        border: 1px solid red;
+        background-color: red;
+    }
+    70% {
+        border: 1px solid green;
+        background-color: green;
+    }
+    100% {
+        border: 1px solid black;
+        background-color: black;
+    }
+}
+
+.ballspin0{
+    transform: rotate(2363deg) scale(0.75);
+    transition: 6s;
+}
+
+.ballspin1{
+    transform: rotate(2588deg) scale(0.75);
+    transition: 6s;
+}
+
+.ballspin2{
+    transform: rotate(1342deg) scale(0.75);
+    transition: 6s;
+}
+
+.ballspin3{
+    transform: rotate(2345deg) scale(0.75);
+    transition: 6s;
+}
+
+.ballspin4{
+    transform: rotate(2404deg) scale(0.75);
+    transition: 6s;
+}
+
+.ballspin5{
+    transform: rotate(2550deg) scale(0.75);
+    transition: 6s;
+}
+
+.ballspin6{
+    transform: rotate(2460deg) scale(0.75);
+    transition: 6s;
+}
+
+.ballspin7{
+    transform: rotate(2305deg) scale(0.75);
+    transition: 6s;
+}
+
+.ballspin8{
+    transform: rotate(2520deg) scale(0.75);
+    transition: 6s;
+}
+
+.ballspin9{
+    transform: rotate(2268deg) scale(0.75);
+    transition: 6s;
+}
+
+.ballspin10{
+    transform: rotate(2540deg) scale(0.75);
+    transition: 6s;
+}
+
+.ballspin11{
+    transform: rotate(2501deg) scale(0.75);
+    transition: 6s;
+}
+
+.ballspin12{
+    transform: rotate(2326deg) scale(0.75);
+    transition: 6s;
+}
+
+.ballspin13{
+    transform: rotate(2480deg) scale(0.75);
+    transition: 6s;
+}
+
+.ballspin14{
+    transform: rotate(2248deg) scale(0.75);
+    transition: 6s;
+}
+
+.ballspin15{
+    transform: rotate(2385deg) scale(0.75);
+    transition: 6s;
+}
+
+.ballspin16{
+    transform: rotate(2570deg) scale(0.75);
+    transition: 6s;
+}
+
+.ballspin17{
+    transform: rotate(2443deg) scale(0.75);
+    transition: 6s;
+}
+
+.ballspin18{
+    transform: rotate(2288deg) scale(0.75);
+    transition: 6s;
+}
+
+.ballspin19{
+    transform: rotate(2394deg) scale(0.75);
+    transition: 6s;
+}
+
+.ballspin20{
+    transform: rotate(2598deg) scale(0.75);
+    transition: 6s;
+}
+
+.ballspin21{
+    transform: rotate(2414deg) scale(0.75);
+    transition: 6s;
+}
+
+.ballspin22{
+    transform: rotate(2278deg) scale(0.75);
+    transition: 6s;
+}
+
+.ballspin23{
+    transform: rotate(2530deg) scale(0.75);
+    transition: 6s;
+}
+
+.ballspin24{
+    transform: rotate(2560deg) scale(0.75);
+    transition: 6s;
+}
+
+.ballspin25{
+    transform: rotate(2433deg) scale(0.75);
+    transition: 6s;
+}
+
+.ballspin26{
+    transform: rotate(2356deg) scale(0.75);
+    transition: 6s;
+}
+
+.ballspin27{
+    transform: rotate(2473deg) scale(0.75);
+    transition: 6s;
+}
+
+.ballspin28{
+    transform: rotate(2316deg) scale(0.75);
+    transition: 6s;
+}
+
+.ballspin29{
+    transform: rotate(2296deg) scale(0.75);
+    transition: 6s;
+}
+
+.ballspin30{
+    transform: rotate(2511deg) scale(0.75);
+    transition: 6s;
+}
+
+.ballspin31{
+    transform: rotate(2258deg) scale(0.75);
+    transition: 6s;
+}
+
+.ballspin32{
+    transform: rotate(2373deg) scale(0.75);
+    transition: 6s;
+}
+
+.ballspin33{
+    transform: rotate(2577deg) scale(0.75);
+    transition: 6s;
+}
+
+.ballspin34{
+    transform: rotate(2452deg) scale(0.75);
+    transition: 6s;
+}
+
+.ballspin35{
+    transform: rotate(2336deg) scale(0.75);
+    transition: 6s;
+}
+
+.ballspin36{
+    transform: rotate(2491deg) scale(0.75);
+    transition: 6s;
+}
+
+@media screen and (max-width: 1200px) {
+    .container {
+        width: 70%;
+        height: 60%;
+        margin: auto;
+    }
+    .roulette, .roulette-center, .ball {
+        height: 250px;
+        width: 250px;
+    }
+    .money{
+        margin-left: 45%;
+        width: 290px;
+        /* width: 40%; */
+    }
+
+    .bet{
+        /* margin-left: 10%;
+        width: 80%; */
+        margin-left: 45%;
+        width: 120px;
+        padding-top: 6px;
+        padding-bottom: 6px;
+    }
+    .num{
+        width: 30px;
+    }
+    .game-status{
+        width: 290px;
+        /* width: 40% ; */
+        margin-left: 45%;
+    }
+    .all-in{
+        width: 120px;
+    }
+    .reset {
+        width: 140px;
+        margin-left: 55%;
+    }
+    .description {
+        margin-left: 28%;
+        margin-right: 28%;
+        font-size: 14px;
+    }
+    .red-circle{
+        margin-left: 45%;
+    }
+    .red-circle, .black-circle, .green-circle{
+        margin-right: 2%;
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@media screen and (max-width: 780px) {
+    .container {
+        width: 75%;
+    }
+    .roulette, .roulette-center, .ball {
+        height: 150px;
+        width: 150px;
+    }
+    
+    .money{
+        margin-left: 46%;
+        width: 50%;
+        font-size: 14px;
+        height: 30%;
+    }
+
+    .bet{
+        margin-left: 46%;
+        width: 20%;
+        padding-top: 6px;
+        padding-bottom: 6px;
+        font-size: 9px;
+        height: 30%;
+    }
+    .num{
+        width: 6%;
+        font-size: 9px;
+        height: 30%;
+    }
+    .game-status{
+        width: 50%;
+        margin-left: 46%;
+        font-size: 14px;
+        margin-bottom: 5px;
+        height: 30%;
+    }
+    .all-in{
+        width: 13%;
+        font-size: 8px;
+        padding: 0;
+        height: 25px;
+
+    }
+    .reset {
+        width: 22%;
+        margin-left: 60%;
+        font-size: 9px;
+    }
+    
+    .description {
+        margin-left: 25%;
+        margin-right: 25%;
+        font-size: 9px;
+    }
+    .red-circle, .black-circle, .green-circle{
+        height: 50px;
+        width: 50px;
+    }
+    .red-circle{
+        margin-left: 45%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    h1, p {
+        font-size: 18px;
+    }
+    .container {
+        width: 75%;
+    }
+    .roulette, .roulette-center, .ball {
+        height: 120px;
+        width: 120px;
+    }
+    .money{
+        margin-left: 40%;
+        width: 40%;
+        /* width: 40%; */
+        font-size: 10px;
+    }
+
+    .bet{
+        /* margin-left: 10%;
+        width: 80%; */
+        margin-left: 40%;
+        width: 17%;
+        padding-top: 6px;
+        padding-bottom: 6px;
+        font-size: 10px;
+    }
+    .num{
+        width: 6%;
+        font-size: 10px;
+    }
+    .game-status{
+        width: 40%;
+        /* width: 40% ; */
+        margin-left: 40%;
+        font-size: 10px;
+    }
+    .all-in{
+        width: 7%;
+        font-size: 5px;
+    }
+    .reset {
+        width: 30%;
+        margin-left: 45%;
+        padding: 0;
+      
+    }
+    .description {
+        margin-left: 15%;
+        margin-right: 15%;
+        
+    }
+    .description p{
+        font-size: 7px;
+    }
+    .red-circle, .black-circle, .green-circle{
+        height: 30px;
+        width: 30px;
+    }
+}
