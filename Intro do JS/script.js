@@ -32,3 +32,54 @@ function myFunction(x, y){  // FUNKCE - tvoříme - function <jméno> (<parametr
 
 myFunction(2,8);            // teď už funkci voláme, nesmíme zapomenout parametry - takže je to teď 2 (parametr 1) na 8 (param. 2)
 // čísla 2, 8 nahrazují v definování funkce na řádku 29-31 x, y
+
+
+// PODMÍNKA IF
+if (int1 >= 7) {            // Jestli je int1 větší nebo rovno 7   
+    console.log("Ano");     // Piš "Ano"
+} else if (int1 == 6) {     // Pokud je int1 rovno 6       
+    console.log("6");       // Piš "6"
+} else {                    // Jinak
+    console.log("Ne");      // Piš "Ne"
+}
+
+console.log(int1 >= 7);     // Toto vypíše do konzole true nebo false
+
+console.log(int1 >= 7 ? "ano" : "ne");  // Při používání této zkratky si můžeme určit co to má udělat pokud true/false
+
+
+// SMYČKA FOR -- Používáme, když víme, kolikrát chceme kód zopakovat
+
+for(i=1;i<=10;i++) {        
+    console.log(i);         // Vypíše čísla od 1 do 10
+}
+
+// SMYČKA WHILE -- Dokud
+let a = 1
+while(a<=5) {
+    console.log(a);     // Vypíše čísla od 1 do 5
+    a++;                // ! NESMÍME ZAPOMENOUT ! (jinak bude cyklus nekonečný)
+}
+
+
+
+// SYNTAXE:  (<> nepíšeme)
+
+    // DEKLARACE
+    // let/const/var <jméno proměnné> <hodnota>
+        // ARRAY
+            // do <hodnota> v deklaraci dosadíme [<položka1>,<položka2>]    (CTRL + F = [])
+        // OBJEKT
+            // do <hodnota> v deklaraci dosadíme {<proměnná1>: <hodnota1> , <proměnná2>: <hodnota2>
+
+    // FUNKCE
+    // function <jméno funkce> (<parametry>) {<kód>}
+
+    // PODMÍNKY
+        // if(<podmínka>) {<kód>}
+
+    // SMYČKY/CYKLY
+        // FOR:
+            // for (i=<číslo, většinou 1 nebo 0>; i<relační operátor><číslo>;i++) {<kód>}
+        // WHILE:
+            // while(<proměnná><relační operátor><číslo>) {kód}
