@@ -1,7 +1,7 @@
 const canvas = document.querySelector(".gameCanvas");
 const ctx = canvas.getContext("2d");
 canvas.width = 1200;
-canvas.height = 725;
+canvas.height = 700;
 
 const overlay = document.querySelector(".overlay");
 const startBtn = document.querySelector(".startBtn");
@@ -15,18 +15,18 @@ hitSound.volume = 0.3;
 gameMusic.loop = true;    
 gameMusic.volume = 0.5;  
 
-let keys = {};
-let bullets = [];
-let enemies = [];
-let player;
-let score = 0;
-let gameOver = false;
-let gameStarted = false;
-let enemyDirection = 1;
-let stars = [];
-let boss = null;
-let bossActive = false;
-let bossBullets = [];
+let keys = {};              // Klávesy
+let bullets = [];           // Střely hráče
+let enemies = [];           // Nepřátelé
+let player;                 // Hráč
+let score = 0;              // Skóre
+let gameOver = false;       // Jestli hra skončila
+let gameStarted = false;    // Jestli hra začala
+let enemyDirection = 1;     // Směr nepřátel => 1 = doprava, -1 = doleva
+let stars = [];             // Hvězdy
+let boss = null;            // Boss
+let bossActive = false;     // Zda je aktivní boss
+let bossBullets = [];       // Střely bosse
 
 
 document.addEventListener("keydown", (e) => (keys[e.code] = true));
@@ -46,19 +46,12 @@ class Player {
     ctx.fillStyle = this.color;
   
     ctx.beginPath();
-
     ctx.moveTo(this.x + this.width / 2, this.y);
-
     ctx.lineTo(this.x, this.y + this.height * 0.7);
-
     ctx.lineTo(this.x - this.width * 0.3, this.y + this.height);
-    
     ctx.lineTo(this.x + this.width * 0.2, this.y + this.height * 0.9);
-
     ctx.lineTo(this.x + this.width * 0.8, this.y + this.height * 0.9);
-
     ctx.lineTo(this.x + this.width + this.width * 0.3, this.y + this.height);
-
     ctx.lineTo(this.x + this.width, this.y + this.height * 0.7);
     
     ctx.closePath();
@@ -114,15 +107,10 @@ class Enemy {
   
       ctx.beginPath();
       ctx.moveTo(this.x + this.width / 2, this.y + this.height + 4);
-
       ctx.lineTo(this.x, this.y + this.height * 0.4);
-
       ctx.lineTo(this.x - this.width * 0.2, this.y);
-  
       ctx.lineTo(this.x + this.width / 2, this.y + this.height * 0.15);
-
       ctx.lineTo(this.x + this.width + this.width * 0.2, this.y);
-
       ctx.lineTo(this.x + this.width, this.y + this.height * 0.4);
   
       ctx.closePath();
@@ -348,8 +336,10 @@ function drawHUD() {
   ctx.fillText(`Skóre: ${score}`, 10, 20);
 }
 
+// SMYČKA HRY
+
 function gameLoop() {
-  if (!gameStarted) return;
+  if (!gameStarted) return; 
 
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -439,6 +429,7 @@ function endGame(message) {
   gameMusic.pause();          
   gameMusic.currentTime = 0;    
   overlay.style.display = "flex";
+  overlay.querySelector("h1").style.fontSize = "40px";
   overlay.querySelector("h1").innerText = `${message}\nSkóre: ${score}`;
   startBtn.innerText = "Hrát znovu";
   gameStarted = false;
