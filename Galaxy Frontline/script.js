@@ -13,7 +13,7 @@ let gameMusic = new Audio("game-music.mp3");
 shootSound.volume = 0.4;
 hitSound.volume = 0.3;
 gameMusic.loop = true;    
-gameMusic.volume = 0.5;  
+gameMusic.volume = 0.15;  
 
 let keys = {};              // Klávesy
 let bullets = [];           // Střely hráče
@@ -27,6 +27,7 @@ let stars = [];             // Hvězdy
 let boss = null;            // Boss
 let bossActive = false;     // Zda je aktivní boss
 let bossBullets = [];       // Střely bosse
+let level = 1;
 
 
 document.addEventListener("keydown", (e) => (keys[e.code] = true));
@@ -268,6 +269,7 @@ function resetGame() {
   gameOver = false;
   enemyDirection = 1;
   stars = [];
+  level = 1;
   for (let i = 0; i < 1000; i++) {
     stars.push(new Star());
   }
@@ -276,7 +278,7 @@ function resetGame() {
 
   player = new Player();
 
-  for (let row = 0; row < 10; row++) {
+  for (let row = 0; row < 5; row++) {
     for (let col = 0; col < 20; col++) {
       enemies.push(new Enemy(60 + col * 48, 30 + row * 40));
     }
@@ -334,6 +336,8 @@ function drawHUD() {
   ctx.fillStyle = "white";
   ctx.font = "16px Arial";
   ctx.fillText(`Skóre: ${score}`, 10, 20);
+  ctx.fillText(`Level: ${level}`, 150, 20);
+  ctx.fillText(`Zbývá nepřátel: ${440 - (score / 10)}`, 250, 20);
 }
 
 // SMYČKA HRY
@@ -365,8 +369,23 @@ function gameLoop() {
     checkCollisions();
 
     if (enemies.every((e) => !e.alive)) {
-      boss = new Boss();
-      bossActive = true;
+      level += 1
+      if(level == 2) {
+        for (let row = 0; row < 7; row++) {
+          for (let col = 0; col < 20; col++) {
+            enemies.push(new Enemy(60 + col * 48, 30 + row * 40));
+          }
+        }
+      } else if (level == 3){
+        for (let row = 0; row < 10; row++) {
+          for (let col = 0; col < 20; col++) {
+            enemies.push(new Enemy(60 + col * 48, 30 + row * 40));
+          }
+        }
+      } else if (level == 4) {
+        boss = new Boss();
+        bossActive = true;
+      }
     }
   } else {
     boss.update();
@@ -386,7 +405,7 @@ function gameLoop() {
 
         if (boss.health <= 0) {
           bullet.y = 1000;
-          score += 500
+          score += 600
           endGame("Vyhráli jste!");
           controlsDiv.style.display = "none";
           return; 
