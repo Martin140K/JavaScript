@@ -350,7 +350,7 @@ function gameLoop() {
   stars.forEach((star) => {
     star.update();
     star.draw();
-    star.speed *= 1.0001;
+    star.speed *= 1.00005;
   });
 
   player.update();
