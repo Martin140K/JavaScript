@@ -13,7 +13,7 @@ let gameMusic = new Audio("game-music.mp3");
 shootSound.volume = 0.4;
 hitSound.volume = 0.3;
 gameMusic.loop = true;    
-gameMusic.volume = 0.15;  
+gameMusic.volume = 0.2;  
 
 let keys = {};              // Klávesy
 let bullets = [];           // Střely hráče
